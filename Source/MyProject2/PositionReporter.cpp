@@ -14,7 +14,6 @@ UPositionReporter::UPositionReporter()
 	// ...
 }
 
-
 // Called when the game starts
 void UPositionReporter::BeginPlay()
 {
