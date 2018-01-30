@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Grabber.generated.h"
-
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class MYPROJECT2_API UGrabber : public UActorComponent
@@ -25,6 +25,11 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 private:
+
 	float Reach = 100.0F;
-	
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	UInputComponent* Input = nullptr;
+
+	//Ray-cast and grab what's in reach
+	void Grab();
 };
